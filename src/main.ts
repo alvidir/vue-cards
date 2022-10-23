@@ -1,4 +1,11 @@
-import { createApp } from "vue";
-import App from "./App.vue";
+import NoticeCard from "./NoticeCard.vue";
 
-createApp(App).mount("#app");
+const NOTICE_CARD_TAG = "notice-card";
+
+export default {
+  NoticeCard,
+};
+
+export function include(app: any): any {
+  app.component(NOTICE_CARD_TAG, NoticeCard);
+}
