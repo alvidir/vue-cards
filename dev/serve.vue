@@ -1,4 +1,8 @@
 <template>
+  <link
+    href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+    rel="stylesheet"
+  />
   <div id="app">
     <div class="demo-item">
       <notice-card
@@ -28,7 +32,7 @@ export default defineComponent({
 @import "fibonacci-styles";
 
 * {
-  @extend .theme-light;
+  @extend .theme-dark;
 
   margin: 0;
   padding: 0;
