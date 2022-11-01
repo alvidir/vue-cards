@@ -1,14 +1,14 @@
 <template>
   <div class="warning">
-    <div class="flag"></div>
-    <div class="content">
-      <div class="text">
-        <span v-if="title">{{ title }}</span>
-        <p v-if="text">{{ text }}</p>
-      </div>
-      <span class="space-between"></span>
-      <button class="bx bx-x" @click="onClose()"></button>
+    <div v-if="flagged" class="flag"></div>
+    <div v-else class="symbol">
+      <i :class="symbol"></i>
     </div>
+    <div class="content">
+      <span v-if="title">{{ title }}</span>
+      <p v-if="text">{{ text }}</p>
+    </div>
+    <button class="bx bx-x" @click="onClose()"></button>
   </div>
 </template>
 
@@ -20,10 +20,21 @@ export enum NoticeLevel {
   ERROR = "error",
 }
 
+interface LevelData {
+  symbol: string;
+  color: string;
+}
+
 const CLOSE_EVENT_NAME = "close";
-const LEVEL_COLOR: { [key: string]: string } = {
-  [NoticeLevel.INFO]: "var(--color-accent)",
-  [NoticeLevel.ERROR]: "var(--color-red)",
+const LEVEL_DATA: { [key: string]: LevelData } = {
+  [NoticeLevel.INFO]: {
+    symbol: "bx bxs-info-circle",
+    color: "var(--color-accent)",
+  },
+  [NoticeLevel.ERROR]: {
+    symbol: "bx bxs-error",
+    color: "var(--color-red)",
+  },
 };
 
 export default defineComponent({
@@ -34,6 +45,7 @@ export default defineComponent({
   props: {
     title: String,
     text: String,
+    flagged: Boolean,
     level: {
       type: String as PropType<NoticeLevel>,
       default: NoticeLevel.INFO,
@@ -41,8 +53,12 @@ export default defineComponent({
   },
 
   computed: {
-    baseColor(): string {
-      return LEVEL_COLOR[this.level];
+    color(): string {
+      return LEVEL_DATA[this.level].color;
+    },
+
+    symbol(): string {
+      return LEVEL_DATA[this.level].symbol;
     },
   },
 
@@ -57,41 +73,37 @@ export default defineComponent({
 <style lang="scss">
 @import "fibonacci-styles";
 
-$base-color: unquote(v-bind(baseColor));
+$base-color: unquote(v-bind(color));
 
 .warning {
+  @extend .round-corners, .fib-5;
+
   display: flex;
   flex-direction: row;
-  width: 100%;
-
-  .flag,
-  .content {
-    border: 1px solid $base-color;
-  }
+  border: 1px solid $base-color;
+  background: var(--color-background-primary);
+  padding-right: $fib-5 * 1px;
+  overflow: hidden;
 
   .flag {
-    @extend .round-corners, .left-only, .fib-5;
-    width: $fib-5 * 1px;
+    width: $fib-4 * 1px;
     background: $base-color;
     border: 1px solid $base-color;
   }
 
-  .content {
-    @extend .round-corners, .right-only, .fib-5;
-
-    display: flex;
-    flex-direction: row;
-
-    width: 100%;
-    padding: $fib-5 * 1px;
+  .symbol {
     color: $base-color;
-    background: var(--color-background-primary);
+    padding: $fib-6 * 1px;
+    padding-right: 0;
+    font-weight: 600;
+  }
+
+  .content {
+    width: 100%;
+    padding: $fib-6 * 1px;
+    color: $base-color;
     margin-top: auto;
     margin-bottom: auto;
-
-    .space-between {
-      flex: 1;
-    }
 
     span {
       font-weight: 600;
@@ -99,18 +111,17 @@ $base-color: unquote(v-bind(baseColor));
     }
 
     p {
-      margin-top: $fib-5 * 1px;
+      margin-top: $fib-6 * 1px;
       margin-right: $fib-5 * 1px;
-      font-size: $fib-6 * 1px;
+      font-size: 1rem;
     }
+  }
 
-    button {
-      cursor: pointer;
-      background: none;
-      color: $base-color;
-      border: none;
-      font-size: $fib-7 * 1px;
-    }
+  button {
+    background: none;
+    color: $base-color;
+    border: none;
+    font-size: $fib-7 * 1px;
   }
 }
 </style>

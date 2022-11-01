@@ -8,10 +8,11 @@
       <notice-card
         class="card"
         title="I am an info card"
-        text="I am usually used to highlight relevant information for the user"
+        text="I am usually used to highlight relevant information for the user adfasdfasdfas adsf sadf asd fsd fasdfsdfasdfasd  sdfasdf asd fasdf asd      fasdfasdf a sd fa sdf as df asd fa"
         level="info"
       />
       <notice-card
+        class="card"
         title="I am an error card"
         text="I amb usually used to notify to the user about an error"
         level="error"
@@ -66,6 +67,8 @@ h1 {
 }
 
 .card {
-  margin-bottom: 10px;
+  &:first-child {
+    margin-bottom: 10px;
+  }
 }
 </style>
