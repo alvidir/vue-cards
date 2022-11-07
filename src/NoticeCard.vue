@@ -113,7 +113,7 @@ $base-color: unquote(v-bind(color));
     p {
       margin-top: $fib-6 * 1px;
       margin-right: $fib-5 * 1px;
-      font-size: 1rem;
+      font-size: $default-fontsize;
     }
   }
 
