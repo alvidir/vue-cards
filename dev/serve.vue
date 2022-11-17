@@ -18,6 +18,9 @@
         level="error"
       />
     </div>
+    <div class="demo-item">
+      <button>click me</button>
+    </div>
   </div>
 </template>
 
@@ -33,7 +36,7 @@ export default defineComponent({
 @import "fibonacci-styles";
 
 * {
-  @extend .theme-dark;
+  @extend .theme-light;
 
   margin: 0;
   padding: 0;
@@ -60,10 +63,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-h1 {
-  color: red;
 }
 
 .card {

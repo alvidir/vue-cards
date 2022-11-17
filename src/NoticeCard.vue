@@ -1,5 +1,5 @@
 <template>
-  <div class="warning">
+  <div class="notice">
     <div v-if="flagged" class="flag"></div>
     <div v-else class="symbol">
       <i :class="symbol"></i>
@@ -75,7 +75,7 @@ export default defineComponent({
 
 $base-color: unquote(v-bind(color));
 
-.warning {
+.notice {
   @extend .round-corners, .fib-5;
 
   display: flex;
@@ -113,7 +113,7 @@ $base-color: unquote(v-bind(color));
     p {
       margin-top: $fib-6 * 1px;
       margin-right: $fib-5 * 1px;
-      font-size: $default-fontsize;
+      font-size: 0.9rem;
     }
   }
 
