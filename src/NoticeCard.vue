@@ -81,7 +81,7 @@ $base-color: unquote(v-bind(color));
   display: flex;
   flex-direction: row;
   border: 1px solid $base-color;
-  background: var(--color-background-primary);
+  background: var(--color-bg-primary);
   padding-right: $fib-5 * 1px;
   overflow: hidden;
 
@@ -113,7 +113,6 @@ $base-color: unquote(v-bind(color));
     p {
       margin-top: $fib-6 * 1px;
       margin-right: $fib-5 * 1px;
-      font-size: 0.9rem;
     }
   }
 
