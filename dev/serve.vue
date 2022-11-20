@@ -10,7 +10,7 @@
           <notice-card
             class="card"
             title="I am an info card"
-            text="I am usually used to highlight relevant information for the user adfasdfasdfas adsf sadf asd fsd fasdfsdfasdfasd  sdfasdf asd fasdf asd      fasdfasdf a sd fa sdf as df asd fa"
+            text="I am usually used to highlight relevant information for the user"
             level="info"
           />
           <notice-card
@@ -21,14 +21,22 @@
           />
         </div>
         <div class="demo-item">
-          <floating-card title="hello world">
-            <template #trigger>
-              <regular-button>click me</regular-button>
+          <!-- <regular-button>click me</regular-button> -->
+          <regular-card>
+            <template #header>
+              <span
+                ><i class="bx bxs-comment-detail"></i>&nbsp;This is a regular
+                card</span
+              >
+              <small>Regular cards are multipurpose</small>
             </template>
-            <template #header>Hello world</template>
-            click me asdfa sdf asdfasdfa sd asdf asd fa sdf s asdfasdfasdf asd
-            fasd fa sdfa
-          </floating-card>
+            This is the body of the card, so the content itself should be set
+            here
+            <template #footer>
+              <regular-button>cancel</regular-button>
+              <submit-button>accept</submit-button>
+            </template>
+          </regular-card>
         </div>
       </div>
       <div class="demo-subset bg-primary">
@@ -36,7 +44,7 @@
           <notice-card
             class="card"
             title="I am an info card"
-            text="I am usually used to highlight relevant information for the user adfasdfasdfas adsf sadf asd fsd fasdfsdfasdfasd  sdfasdf asd fasdf asd      fasdfasdf a sd fa sdf as df asd fa"
+            text="I am usually used to highlight relevant information for the user"
             level="info"
           />
           <notice-card
@@ -47,14 +55,22 @@
           />
         </div>
         <div class="demo-item">
-          <floating-card title="hello world">
-            <template #trigger>
-              <regular-button>click me</regular-button>
+          <!-- <regular-button>click me</regular-button> -->
+          <regular-card>
+            <template #header>
+              <span
+                ><i class="bx bxs-comment-detail"></i>&nbsp;This is a regular
+                card</span
+              >
+              <small>Regular cards are multipurpose</small>
             </template>
-            <template #header>Hello world</template>
-            click me asdfa sdf asdfasdfa sd asdf asd fa sdf s asdfasdfasdf asd
-            fasd fa sdfa
-          </floating-card>
+            This is the body of the card, so the content itself should be set
+            here
+            <template #footer>
+              <regular-button>cancel</regular-button>
+              <submit-button>accept</submit-button>
+            </template>
+          </regular-card>
         </div>
       </div>
     </div>
@@ -64,7 +80,7 @@
           <notice-card
             class="card"
             title="I am an info card"
-            text="I am usually used to highlight relevant information for the user adfasdfasdfas adsf sadf asd fsd fasdfsdfasdfasd  sdfasdf asd fasdf asd      fasdfasdf a sd fa sdf as df asd fa"
+            text="I am usually used to highlight relevant information for the user"
             level="info"
           />
           <notice-card
@@ -75,14 +91,22 @@
           />
         </div>
         <div class="demo-item">
-          <floating-card title="hello world">
-            <template #trigger>
-              <regular-button>click me</regular-button>
+          <!-- <regular-button>click me</regular-button> -->
+          <regular-card>
+            <template #header>
+              <span
+                ><i class="bx bxs-comment-detail"></i>&nbsp;This is a regular
+                card</span
+              >
+              <small>Regular cards are multipurpose</small>
             </template>
-            <template #header>Hello world</template>
-            click me asdfa sdf asdfasdfa sd asdf asd fa sdf s asdfasdfasdf asd
-            fasd fa sdfa
-          </floating-card>
+            This is the body of the card, so the content itself should be set
+            here
+            <template #footer>
+              <regular-button>cancel</regular-button>
+              <submit-button>accept</submit-button>
+            </template>
+          </regular-card>
         </div>
       </div>
       <div class="demo-subset bg-primary">
@@ -90,7 +114,7 @@
           <notice-card
             class="card"
             title="I am an info card"
-            text="I am usually used to highlight relevant information for the user adfasdfasdfas adsf sadf asd fsd fasdfsdfasdfasd  sdfasdf asd fasdf asd      fasdfasdf a sd fa sdf as df asd fa"
+            text="I am usually used to highlight relevant information for the user"
             level="info"
           />
           <notice-card
@@ -101,14 +125,22 @@
           />
         </div>
         <div class="demo-item">
-          <floating-card title="hello world">
-            <template #trigger>
-              <regular-button>click me</regular-button>
+          <!-- <regular-button>click me</regular-button> -->
+          <regular-card>
+            <template #header>
+              <span
+                ><i class="bx bxs-comment-detail"></i>&nbsp;This is a regular
+                card</span
+              >
+              <small>Regular cards are multipurpose</small>
             </template>
-            <template #header>Hello world</template>
-            click me asdfa sdf asdfasdfa sd asdf asd fa sdf s asdfasdfasdf asd
-            fasd fa sdfa
-          </floating-card>
+            This is the body of the card, so the content itself should be set
+            here
+            <template #footer>
+              <regular-button>cancel</regular-button>
+              <submit-button>accept</submit-button>
+            </template>
+          </regular-card>
         </div>
       </div>
     </div>
@@ -118,10 +150,11 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import RegularButton from "vue-buttons/src/RegularButton.vue";
+import SubmitButton from "vue-buttons/src/SubmitButton.vue";
 
 export default defineComponent({
   name: "ServeDev",
-  components: { RegularButton },
+  components: { RegularButton, SubmitButton },
 });
 </script>
 

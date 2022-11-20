@@ -1,5 +1,5 @@
 <template>
-  <div class="notice">
+  <div class="notice-card">
     <div v-if="flagged" class="flag"></div>
     <div v-else class="symbol">
       <i :class="symbol"></i>
@@ -75,7 +75,7 @@ export default defineComponent({
 
 $base-color: unquote(v-bind(color));
 
-.notice {
+.notice-card {
   @extend .round-corners, .fib-5;
 
   display: flex;
