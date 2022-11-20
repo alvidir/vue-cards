@@ -57,6 +57,7 @@ export default defineComponent({
 
     :first-child {
       font-weight: 600;
+      margin-bottom: $fib-3 * 1px;
     }
 
     :not(:first-child) {
