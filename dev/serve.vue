@@ -18,11 +18,12 @@
             title="I am an error card"
             text="I amb usually used to notify to the user about an error"
             level="error"
+            closable
           />
         </div>
         <div class="demo-item">
           <!-- <regular-button>click me</regular-button> -->
-          <regular-card>
+          <regular-card closable>
             <template #header>
               <span
                 ><i class="bx bxs-comment-detail"></i>&nbsp;This is a regular
@@ -33,8 +34,7 @@
             This is the body of the card, so the content itself should be set
             here
             <template #footer>
-              <regular-button>cancel</regular-button>
-              <submit-button>accept</submit-button>
+              <regular-button>do something</regular-button>
             </template>
           </regular-card>
         </div>
@@ -52,11 +52,12 @@
             title="I am an error card"
             text="I amb usually used to notify to the user about an error"
             level="error"
+            closable
           />
         </div>
         <div class="demo-item">
           <!-- <regular-button>click me</regular-button> -->
-          <regular-card>
+          <regular-card closable>
             <template #header>
               <span
                 ><i class="bx bxs-comment-detail"></i>&nbsp;This is a regular
@@ -67,8 +68,7 @@
             This is the body of the card, so the content itself should be set
             here
             <template #footer>
-              <regular-button>cancel</regular-button>
-              <submit-button>accept</submit-button>
+              <regular-button>do something</regular-button>
             </template>
           </regular-card>
         </div>
@@ -88,11 +88,12 @@
             title="I am an error card"
             text="I amb usually used to notify to the user about an error"
             level="error"
+            closable
           />
         </div>
         <div class="demo-item">
           <!-- <regular-button>click me</regular-button> -->
-          <regular-card>
+          <regular-card closable>
             <template #header>
               <span
                 ><i class="bx bxs-comment-detail"></i>&nbsp;This is a regular
@@ -103,8 +104,7 @@
             This is the body of the card, so the content itself should be set
             here
             <template #footer>
-              <regular-button>cancel</regular-button>
-              <submit-button>accept</submit-button>
+              <regular-button>do something</regular-button>
             </template>
           </regular-card>
         </div>
@@ -122,11 +122,12 @@
             title="I am an error card"
             text="I amb usually used to notify to the user about an error"
             level="error"
+            closable
           />
         </div>
         <div class="demo-item">
           <!-- <regular-button>click me</regular-button> -->
-          <regular-card>
+          <regular-card closable>
             <template #header>
               <span
                 ><i class="bx bxs-comment-detail"></i>&nbsp;This is a regular
@@ -137,8 +138,7 @@
             This is the body of the card, so the content itself should be set
             here
             <template #footer>
-              <regular-button>cancel</regular-button>
-              <submit-button>accept</submit-button>
+              <regular-button>do something</regular-button>
             </template>
           </regular-card>
         </div>
@@ -150,11 +150,10 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import RegularButton from "vue-buttons/src/RegularButton.vue";
-import SubmitButton from "vue-buttons/src/SubmitButton.vue";
 
 export default defineComponent({
   name: "ServeDev",
-  components: { RegularButton, SubmitButton },
+  components: { RegularButton },
 });
 </script>
 

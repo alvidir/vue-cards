@@ -1,14 +1,14 @@
 <template>
   <div class="notice-card">
+    <button v-if="closable" class="close bx bx-x" @click="onClose"></button>
     <div v-if="flagged" class="flag"></div>
     <div v-else class="symbol">
       <i :class="symbol"></i>
     </div>
     <div class="content">
-      <span v-if="title">{{ title }}</span>
+      <span v-if="title" :class="{ adjusted: closable }">{{ title }}</span>
       <p v-if="text">{{ text }}</p>
     </div>
-    <button class="bx bx-x" @click="onClose()"></button>
   </div>
 </template>
 
@@ -46,6 +46,7 @@ export default defineComponent({
     title: String,
     text: String,
     flagged: Boolean,
+    closable: Boolean,
     level: {
       type: String as PropType<NoticeLevel>,
       default: NoticeLevel.INFO,
@@ -71,7 +72,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import "fibonacci-styles";
+@import "./styles.scss";
 
 $base-color: unquote(v-bind(color));
 
@@ -79,11 +80,16 @@ $base-color: unquote(v-bind(color));
   @extend .round-corners, .fib-5;
 
   display: flex;
+  position: relative;
   flex-direction: row;
   border: 1px solid $base-color;
   background: var(--color-bg-primary);
   padding-right: $fib-5 * 1px;
   overflow: hidden;
+
+  button {
+    color: $base-color !important;
+  }
 
   .flag {
     width: $fib-4 * 1px;
@@ -119,8 +125,8 @@ $base-color: unquote(v-bind(color));
   button {
     background: none;
     color: $base-color;
+    font-size: large;
     border: none;
-    font-size: $fib-7 * 1px;
   }
 }
 </style>
