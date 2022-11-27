@@ -52,7 +52,6 @@ export default defineComponent({
   position: relative;
   border: 1px solid var(--color-border);
   background: var(--color-bg-primary);
-  overflow: hidden;
   color: var(--color-text-primary);
 
   transition: box-shadow $default-duration;
