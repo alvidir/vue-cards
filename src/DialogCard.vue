@@ -1,7 +1,7 @@
 <template>
   <div class="dialog-card" v-if="active">
-    <div class="background"></div>
-    <regular-card v-click-outside="onClose" @close="onClose">
+    <div class="background" @click="onClose"></div>
+    <regular-card>
       <template #header v-if="hasHeader">
         <slot name="header"></slot>
       </template>
@@ -15,7 +15,6 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { ClickOutside } from "vue-directives/src/main";
 import RegularCard from "./RegularCard.vue";
 
 const CLOSE_EVENT_NAME = "close";
@@ -24,7 +23,6 @@ export default defineComponent({
   name: "DialogCard",
   emits: [CLOSE_EVENT_NAME],
   components: { RegularCard },
-  directives: { ClickOutside },
   props: {
     active: {
       type: Boolean,
