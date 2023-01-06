@@ -52,12 +52,14 @@ export default defineComponent({
 @import "./styles.scss";
 
 .dialog-card {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
+  top: 0px;
+  left: 0px;
   backdrop-filter: blur($fib-4 * 1px);
   z-index: 2;
 
