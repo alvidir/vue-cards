@@ -70,7 +70,7 @@ export default defineComponent({
   }
 
   .regular-card {
-    max-width: $fib-9 * 1%;
+    max-width: $fib-8 * 1%;
   }
 }
 </style>
