@@ -33,7 +33,7 @@
         </div>
         <div class="demo-item">
           <!-- <regular-button>click me</regular-button> -->
-          <regular-card closable>
+          <regular-card closable @close="onOutsideClick">
             <template #header>
               <span
                 ><i class="bx bxs-comment-detail"></i>&nbsp;This is a regular
@@ -193,6 +193,10 @@ export default defineComponent({
 
     showDialog(key: number) {
       this.dialogs[key] = true;
+    },
+
+    onOutsideClick() {
+      console.log("on outside click");
     },
   },
 });
