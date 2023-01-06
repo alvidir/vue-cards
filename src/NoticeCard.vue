@@ -1,5 +1,5 @@
 <template>
-  <div class="notice-card">
+  <div class="notice-card" v-if="active">
     <button v-if="closable" class="close bx bx-x" @click="onClose"></button>
     <div v-if="flagged" class="flag"></div>
     <div v-else class="symbol">
@@ -50,6 +50,10 @@ export default defineComponent({
     level: {
       type: String as PropType<NoticeLevel>,
       default: NoticeLevel.INFO,
+    },
+    active: {
+      type: Boolean,
+      default: true,
     },
   },
 

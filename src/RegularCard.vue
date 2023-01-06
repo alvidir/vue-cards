@@ -1,5 +1,5 @@
 <template>
-  <div class="regular-card">
+  <div class="regular-card" v-if="active">
     <button v-if="closable" class="close bx bx-x" @click="onClose"></button>
     <div v-if="hasHeader" class="card-header" :class="{ adjusted: closable }">
       <slot name="header"></slot>
@@ -23,6 +23,10 @@ export default defineComponent({
 
   props: {
     closable: Boolean,
+    active: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   computed: {

@@ -5,6 +5,16 @@
   />
   <div id="app">
     <div class="demo-set light">
+      <dialog-card @close="onClose(1)" :active="dialogs[1]">
+        <template #header>
+          <span><i class="bx bxs-chat"></i>&nbsp;This is a dialog card</span>
+          <small
+            >Dialog cards are usually used for confirmation or important
+            warnings</small
+          >
+        </template>
+        This is the body of the card, so the content itself should be set here
+      </dialog-card>
       <div class="demo-subset bg-secondary">
         <div class="demo-item">
           <notice-card
@@ -34,7 +44,9 @@
             This is the body of the card, so the content itself should be set
             here
             <template #footer>
-              <regular-button>do something</regular-button>
+              <regular-button @click="showDialog(1)">
+                do something
+              </regular-button>
             </template>
           </regular-card>
         </div>
@@ -56,7 +68,6 @@
           />
         </div>
         <div class="demo-item">
-          <!-- <regular-button>click me</regular-button> -->
           <regular-card closable>
             <template #header>
               <span
@@ -68,13 +79,25 @@
             This is the body of the card, so the content itself should be set
             here
             <template #footer>
-              <regular-button>do something</regular-button>
+              <regular-button @click="showDialog(1)">
+                do something
+              </regular-button>
             </template>
           </regular-card>
         </div>
       </div>
     </div>
     <div class="demo-set dark">
+      <dialog-card @close="onClose(2)" :active="dialogs[2]">
+        <template #header>
+          <span><i class="bx bxs-chat"></i>&nbsp;This is a dialog card</span>
+          <small
+            >Dialog cards are usually used for confirmation or important
+            warnings</small
+          >
+        </template>
+        This is the body of the card, so the content itself should be set here
+      </dialog-card>
       <div class="demo-subset bg-secondary">
         <div class="demo-item">
           <notice-card
@@ -104,7 +127,9 @@
             This is the body of the card, so the content itself should be set
             here
             <template #footer>
-              <regular-button>do something</regular-button>
+              <regular-button @click="showDialog(2)">
+                do something
+              </regular-button>
             </template>
           </regular-card>
         </div>
@@ -138,7 +163,9 @@
             This is the body of the card, so the content itself should be set
             here
             <template #footer>
-              <regular-button>do something</regular-button>
+              <regular-button @click="showDialog(2)">
+                do something
+              </regular-button>
             </template>
           </regular-card>
         </div>
@@ -154,6 +181,20 @@ import RegularButton from "vue-buttons/src/RegularButton.vue";
 export default defineComponent({
   name: "ServeDev",
   components: { RegularButton },
+  data() {
+    return {
+      dialogs: { 1: false, 2: false } as { [key: number]: boolean },
+    };
+  },
+  methods: {
+    onClose(key: number) {
+      this.dialogs[key] = false;
+    },
+
+    showDialog(key: number) {
+      this.dialogs[key] = true;
+    },
+  },
 });
 </script>
 
@@ -180,6 +221,7 @@ body {
 
 .demo-set {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 100%;
   height: 100vh;
