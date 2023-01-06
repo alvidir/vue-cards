@@ -41,8 +41,8 @@ export default defineComponent({
   },
 
   methods: {
-    onClose() {
-      this.$emit(CLOSE_EVENT_NAME);
+    onClose(outside: boolean) {
+      this.$emit(CLOSE_EVENT_NAME, outside);
     },
   },
 });

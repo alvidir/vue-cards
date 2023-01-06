@@ -1,6 +1,10 @@
 <template>
-  <div class="regular-card" v-if="active" v-click-outside="onClose">
-    <button v-if="closable" class="close bx bx-x" @click="onClose"></button>
+  <div class="regular-card" v-if="active" v-click-outside="onClose(true)">
+    <button
+      v-if="closable"
+      class="close bx bx-x"
+      @click="onClose(false)"
+    ></button>
     <div v-if="hasHeader" class="card-header" :class="{ adjusted: closable }">
       <slot name="header"></slot>
     </div>
@@ -40,8 +44,8 @@ export default defineComponent({
   },
 
   methods: {
-    onClose() {
-      this.$emit(CLOSE_EVENT_NAME);
+    onClose(outside: boolean) {
+      this.$emit(CLOSE_EVENT_NAME, outside);
     },
   },
 });
