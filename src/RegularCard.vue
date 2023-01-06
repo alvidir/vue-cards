@@ -1,5 +1,5 @@
 <template>
-  <div class="regular-card" v-if="active">
+  <div class="regular-card" v-if="active" v-click-outside="onClose">
     <button v-if="closable" class="close bx bx-x" @click="onClose"></button>
     <div v-if="hasHeader" class="card-header" :class="{ adjusted: closable }">
       <slot name="header"></slot>
@@ -13,14 +13,14 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { ClickOutside } from "vue-directives/src/main";
 
 const CLOSE_EVENT_NAME = "close";
 
 export default defineComponent({
   name: "RegularCard",
   emits: [CLOSE_EVENT_NAME],
-  components: {},
-
+  directives: { ClickOutside },
   props: {
     closable: Boolean,
     active: {
