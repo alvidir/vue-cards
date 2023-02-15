@@ -49,14 +49,14 @@ export default defineComponent({
 @import "./styles.scss";
 
 .regular-card {
-  @extend .round-corners, .fib-5;
+  @extend .round-corners, .smooth;
 
   position: relative;
   border: 1px solid var(--color-border);
   background: var(--color-bg-primary);
   color: var(--color-text-primary);
 
-  transition: box-shadow $default-duration;
+  transition-property: box-shadow;
 
   .card-header {
     display: flex;

@@ -81,7 +81,7 @@ export default defineComponent({
 $base-color: unquote(v-bind(color));
 
 .notice-card {
-  @extend .round-corners, .fib-5;
+  @extend .round-corners;
 
   display: flex;
   position: relative;
