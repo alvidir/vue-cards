@@ -1,55 +1,32 @@
+<script setup lang="ts">
+import { defineEmits, useSlots } from "vue";
+
+const slots = useSlots();
+
+interface Events {
+  (e: "close", payload: MouseEvent): void;
+}
+
+const emit = defineEmits<Events>();
+</script>
+
 <template>
-  <div class="dialog-card" v-if="active">
-    <div class="background" @click="onClose"></div>
-    <regular-card>
-      <template #header v-if="hasHeader">
+  <div class="dialog-card">
+    <div class="background" @click="emit('close', $event)"></div>
+    <regular-card @close="emit('close', $event)" closeable>
+      <template #header v-if="slots.header">
         <slot name="header"></slot>
       </template>
       <slot></slot>
-      <template #footer v-if="hasFooter">
+      <template #footer v-if="slots.footer">
         <slot name="footer"></slot>
       </template>
     </regular-card>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import RegularCard from "./RegularCard.vue";
-
-const CLOSE_EVENT_NAME = "close";
-
-export default defineComponent({
-  name: "DialogCard",
-  emits: [CLOSE_EVENT_NAME],
-  components: { RegularCard },
-  props: {
-    active: {
-      type: Boolean,
-      default: true,
-    },
-  },
-
-  computed: {
-    hasHeader(): boolean {
-      return !!this.$slots.header;
-    },
-
-    hasFooter(): boolean {
-      return !!this.$slots.footer;
-    },
-  },
-
-  methods: {
-    onClose(outside: boolean) {
-      this.$emit(CLOSE_EVENT_NAME, outside);
-    },
-  },
-});
-</script>
-
 <style scoped lang="scss">
-@import "./styles.scss";
+@import "fibonacci-styles";
 
 .dialog-card {
   position: fixed;
@@ -63,7 +40,7 @@ export default defineComponent({
   backdrop-filter: blur($fib-4 * 1px);
   z-index: 2;
 
-  .background {
+  & > .background {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -71,7 +48,7 @@ export default defineComponent({
     opacity: $fib-5 * 1%;
   }
 
-  .regular-card {
+  & > .regular-card {
     max-width: $fib-8 * 1%;
   }
 }
