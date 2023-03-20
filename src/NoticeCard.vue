@@ -54,6 +54,7 @@ const color = computed((): string => {
 </template>
 
 <style lang="scss">
+@import "fibonacci-styles";
 $base-color: unquote(v-bind(color));
 
 .notice-card {
@@ -65,6 +66,10 @@ $base-color: unquote(v-bind(color));
 
   & > .header {
     color: $base-color;
+  }
+
+  & > .body {
+    color: var(--color-text-secondary);
   }
 }
 </style>
