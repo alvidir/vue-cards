@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { withDefaults, defineProps, defineEmits, computed } from "vue";
+import { computed } from "vue";
 import RegularCard from "./RegularCard.vue";
 import { NoticeLevel } from "./types";
 

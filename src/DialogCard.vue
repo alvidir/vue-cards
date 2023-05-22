@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineEmits, useSlots } from "vue";
+import { useSlots } from "vue";
 
 const slots = useSlots();
 
