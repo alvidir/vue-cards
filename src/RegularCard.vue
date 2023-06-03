@@ -64,12 +64,13 @@ const onClose = (payload: MouseEvent) => {
     display: flex;
     flex-direction: column;
 
-    margin: $fib-7 * 1px;
-    margin-bottom: 0;
+    box-sizing: border-box;
+    padding: $fib-7 * 1px;
+    padding-bottom: 0;
 
     :first-child {
       font-weight: 600;
-      margin-bottom: $fib-3 * 1px;
+      padding-bottom: $fib-3 * 1px;
     }
 
     :not(:first-child) {
@@ -78,7 +79,8 @@ const onClose = (payload: MouseEvent) => {
   }
 
   & > .body {
-    margin: $fib-7 * 1px;
+    box-sizing: border-box;
+    padding: $fib-7 * 1px;
     overflow: hidden;
   }
 
@@ -86,8 +88,9 @@ const onClose = (payload: MouseEvent) => {
     display: flex;
     flex-direction: row;
     justify-content: right;
-    margin: $fib-7 * 1px;
-    margin-top: 0;
+    box-sizing: border-box;
+    padding: $fib-7 * 1px;
+    padding-top: 0;
   }
 }
 </style>

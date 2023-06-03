@@ -1,17 +1,16 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import RegularCard from "./RegularCard.vue";
-import { NoticeLevel } from "./types";
 
 interface Props {
   title?: string;
   text?: string;
   closeable?: boolean;
-  level?: NoticeLevel;
+  level?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  level: NoticeLevel.INFO,
+  level: "info",
 });
 
 interface Events {
@@ -22,8 +21,8 @@ const emit = defineEmits<Events>();
 
 const symbol = computed((): string => {
   const symbols: { [key: string]: string } = {
-    [NoticeLevel.INFO]: "bx bxs-info-circle",
-    [NoticeLevel.ERROR]: "bx bxs-error",
+    info: "bx bxs-info-circle",
+    error: "bx bxs-error",
   };
 
   return symbols[props.level];
@@ -31,8 +30,8 @@ const symbol = computed((): string => {
 
 const color = computed((): string => {
   const colors: { [key: string]: string } = {
-    [NoticeLevel.INFO]: "var(--color-accent)",
-    [NoticeLevel.ERROR]: "var(--color-red)",
+    info: "var(--color-accent)",
+    error: "var(--color-red)",
   };
 
   return colors[props.level];

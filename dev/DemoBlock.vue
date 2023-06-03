@@ -3,6 +3,7 @@ import { ref } from "vue";
 import RegularButton from "vue-buttons/src/RegularButton.vue";
 
 const showDialog = ref(false);
+const fieldModel = ref("");
 
 const onClose = () => {
   console.log("got close card event");
@@ -57,6 +58,15 @@ const onClose = () => {
         </regular-button>
       </template>
     </regular-card>
+    <regular-card @close="onClose" closeable>
+      <template #header>
+        <span><i class="bx bxs-pencil"></i>&nbsp;A field within a card</span>
+      </template>
+      <regular-field
+        v-model="fieldModel"
+        placeholder="This is a regular field"
+      ></regular-field>
+    </regular-card>
   </div>
 </template>
 
@@ -70,6 +80,10 @@ const onClose = () => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  & > :first-child {
+    margin-bottom: $fib-6 * 1px;
+  }
 }
 
 .card {
