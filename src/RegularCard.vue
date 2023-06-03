@@ -40,6 +40,9 @@ const onClose = (payload: MouseEvent) => {
   @extend .round-corners;
 
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 1px solid var(--color-border);
   background: var(--color-bg-primary);
   color: var(--color-text-primary);

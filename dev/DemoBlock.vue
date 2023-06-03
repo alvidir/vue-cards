@@ -38,7 +38,7 @@ const onClose = () => {
     />
   </div>
   <div class="demo-item">
-    <regular-card @close="onClose" closeable>
+    <regular-card @close="onClose" closeable class="test">
       <template #header>
         <span
           ><i class="bx bxs-comment-detail"></i>&nbsp;This is a regular
