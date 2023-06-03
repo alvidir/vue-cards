@@ -64,8 +64,8 @@ const onClose = (payload: MouseEvent) => {
     display: flex;
     flex-direction: column;
 
-    padding: $fib-7 * 1px;
-    padding-bottom: 0;
+    margin: $fib-7 * 1px;
+    margin-bottom: 0;
 
     :first-child {
       font-weight: 600;
@@ -78,15 +78,16 @@ const onClose = (payload: MouseEvent) => {
   }
 
   & > .body {
-    padding: $fib-7 * 1px;
+    margin: $fib-7 * 1px;
+    overflow: hidden;
   }
 
   & > .footer {
     display: flex;
     flex-direction: row;
     justify-content: right;
-    padding: $fib-7 * 1px;
-    padding-top: 0;
+    margin: $fib-7 * 1px;
+    margin-top: 0;
   }
 }
 </style>

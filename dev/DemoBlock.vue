@@ -38,7 +38,7 @@ const onClose = () => {
     />
   </div>
   <div class="demo-item">
-    <regular-card @close="onClose" closeable class="test">
+    <regular-card class="sized" @close="onClose" closeable>
       <template #header>
         <span
           ><i class="bx bxs-comment-detail"></i>&nbsp;This is a regular
@@ -46,7 +46,11 @@ const onClose = () => {
         >
         <small>Regular cards are multipurpose</small>
       </template>
-      This is the body of the card, so the content itself should be set here
+      <span
+        >This is the body of the card, so the content itself should be set here.
+        Notice that if the content is too large for the available space, the
+        body is always hidden; header and footer are priorized here.
+      </span>
       <template #footer>
         <regular-button @click="() => (showDialog = true)">
           click me
@@ -71,6 +75,19 @@ const onClose = () => {
 .card {
   &:first-child {
     margin-bottom: 10px;
+  }
+}
+
+.sized {
+  height: 200px;
+
+  span {
+    // Set the necessary styles for the span
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 </style>
