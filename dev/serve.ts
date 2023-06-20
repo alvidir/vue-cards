@@ -1,8 +1,10 @@
 import { createApp } from "vue";
-import Dev from "./serve.vue";
-import { include } from "../src/main";
+import App from "./App.vue";
+import include from "../src/main";
+import includeFields from "vue-fields/src/main";
 
-const app = createApp(Dev);
+const app = createApp(App);
+includeFields(app);
 include(app);
 
 app.mount("#app");
