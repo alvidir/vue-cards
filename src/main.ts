@@ -1,15 +1,14 @@
+import { App } from "vue";
+import RegularCard from "./RegularCard.vue";
 import NoticeCard from "./NoticeCard.vue";
-import FloatingCard from "./FloatingCard.vue";
+import DialogCard from "./DialogCard.vue";
 
-const NOTICE_CARD_TAG = "notice-card";
-const FLOATING_CARD_TAG = "floating-card";
-
-export default {
-  NoticeCard,
-  FloatingCard,
-};
-
-export function include(app: any): any {
-  app.component(NOTICE_CARD_TAG, NoticeCard);
-  app.component(FLOATING_CARD_TAG, FloatingCard);
+function include(app: App): App {
+  return app
+    .component("regular-card", RegularCard)
+    .component("notice-card", NoticeCard)
+    .component("dialog-card", DialogCard);
 }
+
+export default include;
+export { RegularCard, NoticeCard, DialogCard };
