@@ -16,8 +16,8 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-typescript": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
-    "@vue/eslint-config-typescript": "^9.1.0",
-    "eslint": "^7.32.0",
+    "@vue/eslint-config-typescript": "^10.0.0",
+    "eslint": "^8.35.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
@@ -26,8 +26,8 @@
     "vue-fields": "github:alvidir/vue-fields",
     "prettier": "^3.0.2",
     "sass": "^1.32.7",
-    "sass-loader": "^12.0.0",
-    "typescript": "~4.5.5",
+    "sass-loader": "^13.2.0",
+    "typescript": "~5.1.6",
     "vue": "^3.3.4"
   }
 }
